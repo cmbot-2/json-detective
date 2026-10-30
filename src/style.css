@@ -1,0 +1,27 @@
+:root { font-family: ui-sans-serif, system-ui, sans-serif; background: #f6f7fa; color: #283044; font-synthesis: none; }
+* { box-sizing: border-box; } body { margin: 0; } button, textarea { font: inherit; } button { cursor: pointer; }
+.shell { max-width: 1280px; padding: 0 48px; margin: auto; }
+header { display: flex; justify-content: space-between; align-items: center; min-height: 96px; border-bottom: 1px solid #e0e4ed; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 650; letter-spacing: -.04em; }.brand > span { background: #e8ecfa; color: #4e65a9; border: 1px solid #d6def6; border-radius: 9px; padding: 8px; font: 15px ui-monospace, monospace; }
+.privacy { font-size: 11px; color: #646e80; }.privacy > span { font-size: 8px; color: #478473; margin-right: 6px; }
+.intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 56px 0 34px; }
+.eyebrow { font: 10px ui-monospace, monospace; letter-spacing: .15em; color: #6a7793; }
+h1 { font-size: clamp(28px, 3.5vw, 41px); font-weight: 600; letter-spacing: -.05em; margin: 18px 0 12px; }
+.intro p:last-child { color: #737d8e; font-size: 14px; margin-bottom: 0; }
+.mobile-break { display: none; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; background: #fff; border: 1px solid #d7dde8; border-radius: 7px; padding: 11px 14px; color: #4d5c79; font-size: 12px; white-space: nowrap; }.button > span { font-size: 19px; }.button:hover { background: #edf0f8; }
+.editors { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+.editor-panel { border: 1px solid #d9dfeb; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 5px 16px #27374f04; min-width: 0; }
+.editor-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 17px 20px; border-bottom: 1px solid #e7ebf2; }
+.editor-heading label { display: flex; gap: 9px; align-items: center; font-size: 13px; font-weight: 600; }
+.panel-number { font: 10px ui-monospace, monospace; color: #586faf; background: #edf1fd; border: 1px solid #dfe6fb; border-radius: 4px; padding: 5px; }.target-number { color: #6c6798; background: #f1eff9; border-color: #e6e1f5; }
+.reset-button { color: #6c7891; background: none; border: 0; border-radius: 3px; padding: 8px 0; font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }.reset-button:hover { color: #344c8b; }
+.document-note { font: 11px ui-monospace, monospace; color: #8992a2; padding: 20px 24px 3px; }
+textarea { display: block; width: 100%; min-height: 355px; resize: vertical; border: 0; background: #fff; color: #405079; padding: 18px 24px 24px; font: 13px/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; tab-size: 2; border-radius: 3px; }
+textarea:focus { outline: 2px solid #7386bb; outline-offset: -3px; }
+.editor-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-top: 1px solid #e7ebf2; background: #fbfcfe; padding: 13px 20px; font: 10px ui-monospace, monospace; color: #727e92; }
+.workspace-note { display: flex; gap: 12px; align-items: baseline; max-width: 700px; color: #788498; margin: 22px 0 48px; }.workspace-note p { margin: 0; font-size: 12px; line-height: 1.7; }.workspace-note > span { color: #7283aa; }
+:focus-visible { outline: 3px solid #6e80b4; outline-offset: 3px; }
+footer { padding: 24px 0; display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid #e0e4ed; color: #80899a; font-size: 11px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 760px) { .shell { padding: 0 20px; } header { min-height: 80px; }.privacy { display: none; }.intro { align-items: flex-start; flex-direction: column; padding-top: 35px; gap: 20px; }.editors { grid-template-columns: 1fr; }.mobile-break { display: block; }.editor-heading { padding: 12px 16px; } textarea { min-height: 300px; padding: 16px; }.document-note { padding-left: 16px; } footer { flex-direction: column; gap: 8px; } }

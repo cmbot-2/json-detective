@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7fa" /><meta name="description" content="A quiet workspace for two JSON documents. Edit side by side, with your data kept in the browser." />
+    <link rel="icon" href="data:," /><title>JSON Detective</title>
+  </head>
+  <body>
+    <div class="shell">
+      <header><div class="brand"><span aria-hidden="true">{ }</span>JSON Detective</div><span class="privacy"><span aria-hidden="true">●</span> Your documents stay in your browser</span></header>
+      <main>
+        <div class="intro"><div><p class="eyebrow">A LITTLE ORDER IN THE DETAILS</p><h1>Two documents.<br class="mobile-break" /> One workspace.</h1><p>Put your JSON side by side. Give every detail a little room.</p></div><button id="reset-both" class="button">Reset both examples <span aria-hidden="true">↺</span></button></div>
+        <div class="editors">
+          <section class="editor-panel" aria-labelledby="source-label"><div class="editor-heading"><label id="source-label" for="source"><span class="panel-number">01</span>Source JSON</label><button id="reset-source" class="reset-button" aria-label="Reset source example">Reset example</button></div><div class="document-note">The starting point</div><textarea id="source" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" aria-describedby="source-note"></textarea><div class="editor-footer"><span id="source-count"></span><span id="source-note">Editable · JSON text</span></div></section>
+          <section class="editor-panel" aria-labelledby="target-label"><div class="editor-heading"><label id="target-label" for="target"><span class="panel-number target-number">02</span>Target JSON</label><button id="reset-target" class="reset-button" aria-label="Reset target example">Reset example</button></div><div class="document-note">The other side of the story</div><textarea id="target" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" aria-describedby="target-note"></textarea><div class="editor-footer"><span id="target-count"></span><span id="target-note">Editable · JSON text</span></div></section>
+        </div>
+        <div class="workspace-note"><span aria-hidden="true">↳</span><p>Start with the examples or paste your own text. Each document is independent; reset either side whenever you need a fresh start.</p></div>
+        <p id="announcement" class="sr-only" role="status"></p>
+      </main>
+      <footer><span>Small clues. Clearer data.</span><span>Nothing is uploaded or saved between visits.</span></footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
