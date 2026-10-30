@@ -1,4 +1,5 @@
 import './style.css';
+import { validateJson } from './validation';
 
 const examples = {
   source: {
@@ -24,21 +25,29 @@ const inputs: Record<Side, HTMLTextAreaElement> = {
 };
 const announcement = document.querySelector<HTMLElement>('#announcement')!;
 
-function updateCount(side: Side) {
+function updateDocument(side: Side) {
   const text = inputs[side].value;
   const lines = text.split('\n').length;
   document.querySelector('#' + side + '-count')!.textContent =
     lines + (lines === 1 ? ' line' : ' lines') + ' · ' + text.length + ' characters';
+  const validation = validateJson(text);
+  const feedback = document.querySelector<HTMLElement>('#' + side + '-validation')!;
+  const name = side === 'source' ? 'Source' : 'Target';
+  inputs[side].setAttribute('aria-invalid', String(!validation.valid));
+  feedback.dataset.valid = String(validation.valid);
+  feedback.textContent = validation.valid
+    ? `${name}: valid JSON.`
+    : `${name}: ${validation.message}`;
 }
 
 function reset(side: Side) {
   inputs[side].value = JSON.stringify(examples[side], null, 2);
-  updateCount(side);
+  updateDocument(side);
 }
 
 for (const side of sides) {
   reset(side);
-  inputs[side].addEventListener('input', () => updateCount(side));
+  inputs[side].addEventListener('input', () => updateDocument(side));
   document.querySelector('#reset-' + side)!.addEventListener('click', () => {
     reset(side);
     inputs[side].focus();

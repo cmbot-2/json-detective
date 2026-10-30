@@ -1,8 +1,10 @@
 # JSON Detective
 
-Two editors for viewing JSON documents side by side.
+Two editors for checking JSON documents side by side.
 
-Edit either document independently, reset one or both to the examples, and see live line and character counts. Text stays in browser memory and clears when you reload. The editors accept any text; this version does not parse or compare the documents.
+Edit either document independently and see live validation, line counts, and character counts. Errors identify the source or target and include the browser’s syntax explanation, with a location when available. Valid JSON can be an object, array, string, number, boolean, or null. Validation keeps your text intact; reset one or both editors to restore the examples.
+
+Documents stay in browser memory and clear when you reload. Structural comparison is not available yet.
 
 ## Run locally
 
@@ -18,6 +20,7 @@ Open the local URL printed in the terminal.
 ## Development
 
 ```sh
+npm test        # Run regression checks
 npm run check   # Check TypeScript
 npm run build   # Check types and build into dist/
 npm run preview # Serve the build locally

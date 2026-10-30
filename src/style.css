@@ -20,6 +20,10 @@ h1 { font-size: clamp(28px, 3.5vw, 41px); font-weight: 600; letter-spacing: -.05
 textarea { display: block; width: 100%; min-height: 355px; resize: vertical; border: 0; background: #fff; color: #405079; padding: 18px 24px 24px; font: 13px/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; tab-size: 2; border-radius: 3px; }
 textarea:focus { outline: 2px solid #7386bb; outline-offset: -3px; }
 .editor-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-top: 1px solid #e7ebf2; background: #fbfcfe; padding: 13px 20px; font: 10px ui-monospace, monospace; color: #727e92; }
+.validation { margin: 0; padding: 14px 20px; border-top: 1px solid #e7ebf2; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.validation[data-valid="true"] { color: #326c59; background: #f2f8f5; }
+.validation[data-valid="false"] { color: #963d39; background: #fff4f1; }
+textarea[aria-invalid="true"] { box-shadow: inset 3px 0 #c46b5c; }
 .workspace-note { display: flex; gap: 12px; align-items: baseline; max-width: 700px; color: #788498; margin: 22px 0 48px; }.workspace-note p { margin: 0; font-size: 12px; line-height: 1.7; }.workspace-note > span { color: #7283aa; }
 :focus-visible { outline: 3px solid #6e80b4; outline-offset: 3px; }
 footer { padding: 24px 0; display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid #e0e4ed; color: #80899a; font-size: 11px; }
