@@ -1,5 +1,6 @@
 import './style.css';
 import { validateJson } from './validation';
+import { createTree } from './tree';
 
 const examples = {
   source: {
@@ -38,6 +39,14 @@ function updateDocument(side: Side) {
   feedback.textContent = validation.valid
     ? `${name}: valid JSON.`
     : `${name}: ${validation.message}`;
+  const tree = document.querySelector<HTMLElement>('#' + side + '-tree')!;
+  if (validation.valid) tree.replaceChildren(createTree(JSON.parse(text)));
+  else {
+    const note = document.createElement('p');
+    note.className = 'tree-empty';
+    note.textContent = `Fix the ${side} JSON to browse its tree.`;
+    tree.replaceChildren(note);
+  }
 }
 
 function reset(side: Side) {
