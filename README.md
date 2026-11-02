@@ -6,7 +6,9 @@ Edit either document independently and see live validation, line counts, and cha
 
 Each valid document has a tree below its editor. Click a container’s arrow, or focus its summary and press Enter or Space, to browse nested objects and arrays. Keys, array indexes, value types, root primitives, and empty containers are shown explicitly. Editing rebuilds that side’s tree; invalid JSON replaces it with a prompt to fix the input.
 
-Documents stay in browser memory and clear when you reload. Structural comparison is not available yet.
+Choose **Compare JSON** for a summary of added, removed, and changed values from source to target. Object key order and formatting do not matter. Missing properties differ from `null`, and changing a value's type counts as a change. Added or removed properties count once, even when they contain a whole object. Arrays preserve element order and currently count as one change when their contents differ; object key order inside them is still ignored.
+
+Both documents must be valid to compare. Editing or resetting either side clears the old result so you can compare again. Documents stay in browser memory and clear when you reload.
 
 ## Run locally
 
